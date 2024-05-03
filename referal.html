@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Реферал</title>
+  <link id="stylesheet" rel="stylesheet" href="referal.css">
+  <link rel="icon" type="image/png" href="img/u0-transformed.png">
+</head>
+
+<body>
+  <header class="header"> <!--верхнее меню-->
+    <div class="burger-icon" onclick="toggleMenu()">&#9776;</div> <!--  бургер меню -->
+    <a href="index.html" class="logo-link"><!-- лого ссылка  -->
+      <div class="logo"></div>
+    </a>
+    <nav class="menu"> <!--  меню верхнее -->
+      <div class="close-btn" onclick="toggleMenu()">
+        &#10006;
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Услуги</span>
+        <div class="dropdown-content">
+          <a href="give.html">Взять деньги</a>
+          <a href="ongive.html">Отдать деньги</a>
+        </div>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Поддержка</span>
+        <div class="dropdown-content">
+          <a href="support.html">Написать в поддержку</a>
+          <a href="FAQ.html">FAQ</a>
+        </div>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <a class="dropbtn" style="text-decoration: none;" href="adres.html">Адреса</a>
+        </div>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Компания</span>
+        <div class="dropdown-content">
+          <a href="referal.html">Реферальная система</a>
+          <a href="team.html">Команда</a>
+        </div>
+      </div>
+    </nav>
+    <a href="login.html" class="login-btn">Вход</a>
+  </header>
+  <div class="polosa"><!-- отображение названия подраздела -->
+    <h2 style="margin-left: 20px;">Реферальная ссылка</h2>
+  </div>
+  <div style="display: flex; flex-direction: column;"><!-- основной контент -->
+    <div class="referral-link">
+      <p>Пригласите своих друзей и получите бонусы!</p>
+      <p>Как это работает:</p>
+      <ul style="text-align: left;">
+        <li>Поделитесь вашей уникальной ссылкой с друзьями.</li>
+        <li>Когда они используют эту ссылку для регистрации на нашем сайте и выполняют определенные действия (например,
+          оформляют займ), вы получаете бонусы.</li>
+        <li>Чем больше друзей вы пригласите, тем больше бонусов вы можете заработать!</li>
+      </ul>
+      <input type="text" value="https://Kekezaim.com/referral?code=9y2ZDet3967Yhe" readonly>
+      <button onclick="copyReferralLink()">Скопировать ссылку</button>
+      <p></p>
+    </div>
+    <div class="block2">
+      <div class="panel3">
+        <h3>Как получить микрокредит</h3>
+        <div class="panel4">
+          <div class="ungiv">
+            <h4>Шаг 1. Заявка</h4>
+            <p>После регистрации выберите лучшее предложение и заполните форму заявки.</p>
+          </div>
+          <div class="ungiv">
+            <h4>Шаг 2. Одобрение</h4>
+            <p>Mожно получить в среднем в течение 5 минут после заполнения формы заявки</p>
+          </div>
+          <div class="ungiv">
+            <h4>Шаг 3. Получение денег</h4>
+            <p>Вы получите в течение нескольких минут после одобрения заявки на микрокредит.</p>
+          </div>
+        </div>
+      </div>
+      <div class="block3">
+        <div class="panel3">
+          <h3>Как вернуть микрокредит</h3>
+          <div class="panel4">
+            <div class="ungiv">
+              <h4>1. Онлайн</h4>
+              <p>Вы можете оплатить свой микрокредит с помощью банковской карты на сайте микрокредитора.</p>
+            </div>
+            <div class="ungiv">
+              <h4>2. В терминале</h4>
+              <p>Вы можете оплатить наличными деньгами, воспользовавшись платежными (электронными) терминалами платежных
+                систем.</p>
+            </div>
+            <div class="ungiv">
+              <h4>3. В Кассе банка</h4>
+              <p>Для безналичной оплаты вы можете перевести денежные средства на счет МФО через банковский перевод.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer><!-- подвал -->
+        <ul class="menu3"><!-- меню подвала -->
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="team.html">Команда</a></li>
+          <li><a href="referal.html">Реферал</a></li>
+          <li><a href="table.html">Задолжники</a></li>
+          <li><a href="support.html">Поддержка</a></li>
+          <li><a onclick="changeStyle()">Смена интерфейса</a></li>
+        </ul>
+        <ul class="social"><!-- иконки соцсетей -->
+          <li><a href="telegram.html"><i class="fa-brands fa-telegram"></i></a></li>
+          <li><a href="whatsapp.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="instagram.html"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>©2024 Экзаменационный проект - Kekezaim.kz | Трищ Кирилл ИС-22</p>
+      </footer>
+      <script src="script.js"></script><!-- подключение скриптов -->
+      <script src="https://kit.fontawesome.com/09ef455c42.js" crossorigin="anonymous"></script><!-- подключение иконок -->
+      <script>
+        function changeStyle() {
+          var currentStyle = document.getElementById('stylesheet').getAttribute('href');
+          if (currentStyle === 'referal.css') {
+            document.getElementById('stylesheet').setAttribute('href', 'referal_dark.css');
+          } else {
+            document.getElementById('stylesheet').setAttribute('href', 'referal.css');
+          }
+        }
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Взять деньги</title>
+    <link id="stylesheet" rel="stylesheet" href="give.css">
+    <link rel="icon" type="image/png" href="img/u0-transformed.png">
+</head>
+<body>
+    <header class="header"> <!--верхнее меню-->
+        <div class="burger-icon" onclick="toggleMenu()">&#9776;</div> <!--  бургер меню -->
+        <a href="index.html" class="logo-link"><!-- лого ссылка  -->
+          <div class="logo"></div>
+        </a>
+        <nav class="menu"> <!--  меню верхнее -->
+          <div class="close-btn" onclick="toggleMenu()">
+            &#10006;
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Услуги</span>
+            <div class="dropdown-content">
+              <a href="give.html">Взять деньги</a>
+              <a href="ongive.html">Отдать деньги</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Поддержка</span>
+            <div class="dropdown-content">
+              <a href="support.html">Написать в поддержку</a>
+              <a href="FAQ.html">FAQ</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <a class="dropbtn" style="text-decoration: none;" href="adres.html">Адреса</a>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Компания</span>
+            <div class="dropdown-content">
+              <a href="referal.html">Реферальная система</a>
+              <a href="team.html">Команда</a>
+            </div>
+          </div>
+        </nav>
+        <a href="login.html" class="login-btn">Вход</a>
+      </header>
+      <div class="polosa"><!-- отображение названия подраздела -->
+        <h2 style="margin-left: 20px;">Взять деньги</h2>
+      </div>
+      <div class="content"><!-- основной блок  -->
+        <div class="block1">
+            <div class="blockk"><!-- блок с информацией -->
+                <div class="kak">
+                    <h3>Как получить микрокредит</h3>
+                    <div class="punkti">
+                        <div class="ungiv">
+                            <h4>Шаг 1. Заявка</h4>
+                            <p>После регистрации выберите лучшее предложение и заполните форму заявки.</p>
+                        </div>
+                        <div class="ungiv">
+                            <h4>Шаг 2. Одобрение</h4>
+                            <p>Можно получить в среднем в течение 5 минут после заполнения формы заявки</p>
+                        </div>
+                        <div class="ungiv">
+                            <h4>Шаг 3. Получение денег</h4>
+                            <p>Вы получите в течение нескольких минут после одобрения заявки на микрокредит.</p>
+                        </div>
+                    </div>
+                </div>
+                <div><!-- блок с заявкой -->
+                    <div class="zayavka" id="zayavkaForm">
+                        <h2>Оставить заявку на кредит</h2>
+                        <div class="calculator" id="calculatorForm">
+                          <label for="phoneNumber">ИИН</label>
+                          <input type="text" id="phoneNumber" pattern="[0-9]{12}" placeholder="Введите 12 цифр" required /><br />
+                          <label for="accountNumber">Номер счета</label>
+                          <input type="text" id="accountNumber" placeholder="Введите номер счета" required /><br />
+                          <label for="loanAmount">Сумма кредита(тенге)</label>
+                          <input type="number" id="loanAmount" min="1" step="1" placeholder="Введите сумму" required /><br />
+                          <label for="loanTerm">Срок кредита (в месяцах)</label>
+                          <input type="number" id="loanTerm" min="1" step="1" placeholder="Введите срок" required /><br />
+                          <label for="income">Доход</label>
+                          <input type="number" id="income" min="0" step="1" placeholder="Введите доход" required /><br />
+                          <label for="employmentType">Тип занятости</label>
+                          <select id="employmentType" required>
+                            <option value="">Выберите тип занятости</option>
+                            <option value="employed">Работающий</option>
+                            <option value="unemployed">Безработный</option>
+                            <option value="self-employed">Самозанятый</option>
+                            <option value="student">Студент</option>
+                            <option value="retired">Пенсионер</option>
+                          </select><br />
+                          <label for="maritalStatus">Семейное положение</label>
+                          <select id="maritalStatus" required>
+                            <option value="">Выберите семейное положение</option>
+                            <option value="single">Холост/Не замужем</option>
+                            <option value="married">Женат/Замужем</option>
+                            <option value="divorced">Разведен(а)</option>
+                            <option value="widowed">Вдовец/Вдова</option>
+                          </select><br />
+                          <button onclick="validateAndProceed()">Далее</button><br />
+                          <div id="result" style="display: none"></div>
+                        </div>
+                      </div>
+                      <div class="waiting" id="waitingScreen">
+                        <div class="waiting-content">
+                          <i class="fas fa-spinner fa-spin fa-3x"></i>
+                          <p id="statusText">Подождите, ваша заявка обрабатывается...</p>
+                        </div>
+                      </div>
+                      <div class="zayavka" id="approvalMessage" style="display: none;">
+                        <h2>Ваша заявка одобрена!</h2>
+                        <p>Отлично, ваша заявка на кредит одобрена. Деньги зачислены на счет.</p>
+                        <button class="zbut" onclick="applyForAnotherCredit()">Взять еще один кредит</button>
+                      </div>
+                </div>
+            </div>
+            </div>
+    <footer><!-- подвал -->
+        <ul class="menu3"><!-- меню подвала  -->
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="referal.html">Реферал</a></li>
+            <li><a href="table.html">Задолжники</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+            <li><a onclick="changeStyle()">Смена интерфейса</a></li>
+        </ul>
+        <ul class="social"><!-- иконки соцсетей  -->
+            <li><a href="telegram.html"><i class="fa-brands fa-telegram"></i></a></li>
+            <li><a href="whatsapp.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="instagram.html"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>©2024 Экзаменационный проект - Kekezaim.kz | Трищ Кирилл ИС-22</p>
+    </footer>
+
+<script src="https://kit.fontawesome.com/09ef455c42.js" crossorigin="anonymous"></script><!-- подключение иконок -->
+<script src="script.js"></script><!-- подключение скриптов -->
+      <script>
+        function changeStyle() {
+            var currentStyle = document.getElementById('stylesheet').getAttribute('href');
+            if (currentStyle === 'give.css') {
+                document.getElementById('stylesheet').setAttribute('href', 'give_dark.css');
+            } else {
+                document.getElementById('stylesheet').setAttribute('href', 'give.css');
+            }
+        }
+    </script>
+</body>
+</html>

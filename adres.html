@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адреса</title>
+    <link id="stylesheet" rel="stylesheet" href="adres.css">
+    <link rel="icon" type="image/png" href="img/u0-transformed.png">
+</head>
+<body>
+    <header class="header"> <!--верхнее меню-->
+        <div class="burger-icon" onclick="toggleMenu()">&#9776;</div> <!--  бургер меню -->
+        <a href="index.html" class="logo-link"> <!-- лого ссылка  -->
+          <div class="logo"></div>
+        </a>
+        <nav class="menu"> <!--  меню верхнее -->
+          <div class="close-btn" onclick="toggleMenu()">
+            &#10006;
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Услуги</span>
+            <div class="dropdown-content">
+              <a href="give.html">Взять деньги</a>
+              <a href="ongive.html">Отдать деньги</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Поддержка</span>
+            <div class="dropdown-content">
+              <a href="support.html">Написать в поддержку</a>
+              <a href="FAQ.html">FAQ</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <a class="dropbtn" style="text-decoration: none;" href="adres.html">Адреса</a>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Компания</span>
+            <div class="dropdown-content">
+              <a href="referal.html">Реферальная система</a>
+              <a href="team.html">Команда</a>
+            </div>
+          </div>
+        </nav>
+        <a href="login.html" class="login-btn">Вход</a>
+      </header>
+      <div class="polosa"> <!-- отображение названия подраздела -->
+        <h2 style="margin-left: 20px;">Адреса наших филиалов</h2>
+      </div>
+      <main> <!-- карточки адресов -->
+        <section class="branch-section">
+          <div class="branch-card">
+            <h2>Филиал в Алматы</h2>
+            <p>Адрес: ул. Примерная, 123</p>
+            <p>Телефон: +7 (777) 123-45-67</p>
+          </div>
+          <div class="branch-card">
+            <h2>Филиал в Астане</h2>
+            <p>Адрес: пр. Примерный, 456</p>
+            <p>Телефон: +7 (777) 765-43-21</p>
+          </div>
+          <div class="branch-card">
+            <h2>Филиал в Уральске</h2>
+            <p>Адрес: ул. Примерная, 123</p>
+            <p>Телефон: +7 (777) 123-45-67</p>
+          </div>
+        </section>
+        <section class="branch-section">
+            <div class="branch-card">
+              <h2>Филиал в Кокшетау</h2>
+              <p>Адрес: пр. Примерный, 32</p>
+              <p>Телефон: +7 (777) 765-43-21</p>
+            </div>
+            <div class="branch-card">
+                <h2>Филиал в Караганде</h2>
+                <p>Адрес: ул. Примерная, 213</p>
+                <p>Телефон: +7 (777) 123-45-67</p>
+              </div>
+              <div class="branch-card">
+                <h2>Филиал в Павлодаре</h2>
+                <p>Адрес: пр. Примерный, 96</p>
+                <p>Телефон: +7 (777) 873-43-25</p>
+              </div>
+          </section>
+          <section class="branch-section">
+            <div class="branch-card">
+              <h2>Филиал в Актау</h2>
+              <p>Адрес: пр. Примерный, 156</p>
+              <p>Телефон: +7 (777) 455-45-22</p>
+            </div>
+            <div class="branch-card">
+                <h2>Филиал в Семее</h2>
+                <p>Адрес: ул. Примерная, 323</p>
+                <p>Телефон: +7 (777) 123-43-87</p>
+              </div>
+              <div class="branch-card">
+                <h2>Филиал в Актобе</h2>
+                <p>Адрес: пр. Примерный, 326</p>
+                <p>Телефон: +7 (777) 555-33-67</p>
+              </div>
+          </section>
+      </main>
+    <footer> <!--  подвал -->
+        <ul class="menu3">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="referal.html">Реферал</a></li>
+            <li><a href="table.html">Задолжники</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+            <li><a onclick="changeStyle()">Смена интерфейса</a></li>
+        </ul>
+        <ul class="social"> <!-- исконки соцсетей  -->
+            <li><a href="telegram.html"><i class="fa-brands fa-telegram"></i></a></li>
+            <li><a href="whatsapp.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="instagram.html"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>©2024 Экзаменационный проект - Kekezaim.kz | Трищ Кирилл ИС-22</p>
+    </footer>
+<script src="script.js"></script> <!--  подключение скриптов -->
+<script src="https://kit.fontawesome.com/09ef455c42.js" crossorigin="anonymous"></script> <!-- иконки  -->
+<script>
+  function changeStyle() {
+      var currentStyle = document.getElementById('stylesheet').getAttribute('href');
+      if (currentStyle === 'adres.css') {
+          document.getElementById('stylesheet').setAttribute('href', 'adres_dark.css');
+      } else {
+          document.getElementById('stylesheet').setAttribute('href', 'adres.css');
+      }
+  }
+</script>
+</body>
+</html>

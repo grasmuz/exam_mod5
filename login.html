@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход и регистрация</title>
+  <link id="stylesheet" rel="stylesheet" href="login.css">
+  <link rel="icon" type="image/png" href="img/u0-transformed.png">
+</head>
+</head>
+<header class="header"> <!--верхнее меню-->
+    <div class="burger-icon" onclick="toggleMenu()">&#9776;</div> <!--  бургер меню -->
+    <a href="index.html" class="logo-link"><!-- лого ссылка  -->
+      <div class="logo"></div>
+    </a>
+    <nav class="menu"> <!--  меню верхнее -->
+      <div class="close-btn" onclick="toggleMenu()">
+        &#10006;
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Услуги</span>
+        <div class="dropdown-content">
+          <a href="give.html">Взять деньги</a>
+          <a href="ongive.html">Отдать деньги</a>
+        </div>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Поддержка</span>
+        <div class="dropdown-content">
+          <a href="support.html">Написать в поддержку</a>
+          <a href="FAQ.html">FAQ</a>
+        </div>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <a class="dropbtn" style="text-decoration: none;" href="adres.html">Адреса</a>
+      </div>
+      <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+        <span class="dropbtn">Компания</span>
+        <div class="dropdown-content">
+          <a href="referal.html">Реферальная система</a>
+          <a href="team.html">Команда</a>
+        </div>
+      </div>
+    </nav>
+    <a href="login.html" class="login-btn">Вход</a>
+  </header>
+  <div class="polosa"><!-- отображение названия подраздела -->
+    <h2 style="margin-left: 20px;">Вход и регистрация</h2>
+  </div>
+    <div class="content"><!-- основной контент -->
+        <div class="reg"><!-- блок с регистрацией -->
+            <h2>Регистрация</h2>
+            <h4>Зарегистрируйтесь для доступа</h4>
+            <div class="input-fields">
+                <input type="text" id="fullName" placeholder="ФИО" required>
+                <input type="tel" id="phoneNumber" placeholder="Номер телефона" pattern="[0-9]{10}" title="Введите 10 цифр" required>
+                <input type="text" id="iin" placeholder="ИИН" pattern="[0-9]{12}" title="Введите 12 цифр" required>
+                <input type="text" id="documentNumber" placeholder="Номер документа" required>
+                <input type="password" id="password" placeholder="Пароль" required>
+                <input type="password" id="confirmPassword" placeholder="Повторите пароль" required>
+            </div>
+            <button class="next-btn" onclick="validateRegistration()">Далее</button>
+        </div>
+        <div class="or">ИЛИ</div><!-- блок с или -->
+        <div class="login"><!-- блок с входом -->
+            <h2>Вход</h2>
+            <h4>Войдите в личный кабинет</h4>
+            <div class="input-fields">
+                <input type="tel" placeholder="Номер телефона или ИИН" pattern="[0-9]{10,12}" title="Введите от 10 до 12 цифр" required>
+                <input type="password" placeholder="Пароль" required>
+            </div>
+            <button class="next-btn">Далее</button>
+        </div>
+    </div>
+    <footer><!-- подвал -->
+        <ul class="menu3"><!-- меню подвала -->
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="referal.html">Реферал</a></li>
+            <li><a href="table.html">Задолжники</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+            <li><a onclick="changeStyle()">Смена интерфейса</a></li>
+        </ul>
+        <ul class="social"><!-- иконки соцсетей  -->
+            <li><a href="telegram.html"><i class="fa-brands fa-telegram"></i></a></li>
+            <li><a href="whatsapp.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="instagram.html"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>©2024 Экзаменационный проект - Kekezaim.kz | Трищ Кирилл ИС-22</p>
+    </footer>
+<script src="script.js"></script><!-- подключение скриптов -->
+    <script src="https://kit.fontawesome.com/09ef455c42.js" crossorigin="anonymous"></script><!-- подключение иконок -->
+    <script>
+      function changeStyle() {
+          var currentStyle = document.getElementById('stylesheet').getAttribute('href');
+          if (currentStyle === 'login.css') {
+              document.getElementById('stylesheet').setAttribute('href', 'login_dark.css');
+          } else {
+              document.getElementById('stylesheet').setAttribute('href', 'login.css');
+          }
+      }
+  </script>
+    </body>
+    </html>

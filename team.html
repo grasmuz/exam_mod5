@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда</title>
+    <link id="stylesheet" rel="stylesheet" href="team.css">
+    <link rel="icon" type="image/png" href="img/u0-transformed.png">
+</head>
+<body>
+    <header class="header"> <!--верхнее меню-->
+        <div class="burger-icon" onclick="toggleMenu()">&#9776;</div> <!--  бургер меню -->
+        <a href="index.html" class="logo-link"><!-- лого ссылка  -->
+          <div class="logo"></div>
+        </a>
+        <nav class="menu"> <!--  меню верхнее -->
+          <div class="close-btn" onclick="toggleMenu()">
+            &#10006;
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Услуги</span>
+            <div class="dropdown-content">
+              <a href="give.html">Взять деньги</a>
+              <a href="ongive.html">Отдать деньги</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Поддержка</span>
+            <div class="dropdown-content">
+              <a href="support.html">Написать в поддержку</a>
+              <a href="FAQ.html">FAQ</a>
+            </div>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <a class="dropbtn" style="text-decoration: none;" href="adres.html">Адреса</a>
+          </div>
+          <div class="menu-item dropdown" onclick="toggleSubMenu(this)">
+            <span class="dropbtn">Компания</span>
+            <div class="dropdown-content">
+              <a href="referal.html">Реферальная система</a>
+              <a href="team.html">Команда</a>
+            </div>
+          </div>
+        </nav>
+        <a href="login.html" class="login-btn">Вход</a>
+      </header>
+      <div class="polosa"><!-- отображение названия подраздела -->
+        <h2 style="margin-left: 20px;">Фотогалерея команды и статистика кредитов</h2>
+      </div>
+      <div class="content"><!-- основной контент -->
+        <div class="gallery-container"><!-- фотогалерея -->
+            <div class="gallery-item">
+                <img src="img/team1.jpg" alt="Фото 1">
+                <div class="caption">
+                    <p>Сотрудник: Дементий</p>
+                    <p>Должность: Юрист</p>
+                    <p>Опыт работы: 1 год</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/team2.jpg" alt="Фото 2">
+                <div class="caption">
+                    <p>Сотрудник: Добромир</p>
+                    <p>Должность: Коллектор</p>
+                    <p>Опыт работы: 9 лет</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/team3.jpg" alt="Фото 3">
+                <div class="caption">
+                    <p>Сотрудник: Варфоломей</p>
+                    <p>Должность: Коллектор</p>
+                    <p>Опыт работы: 7 лет</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="img/team4.jpg" alt="Фото 4">
+                <div class="caption">
+                    <p>Сотрудник: Алиса</p>
+                    <p>Должность: Выдача кредитов</p>
+                    <p>Опыт работы: 4 года</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+              <img src="img/team5.jpg" alt="Фото 4">
+              <div class="caption">
+                  <p>Сотрудник: Тихомир</p>
+                  <p>Должность: Коллектор</p>
+                  <p>Опыт работы: 19 лет</p>
+              </div>
+          </div>
+          <div class="gallery-item">
+            <img src="img/team6.jpg" alt="Фото 4">
+            <div class="caption">
+                <p>Сотрудник: Святослав</p>
+                <p>Должность: Охрана</p>
+                <p>Опыт работы: 1 год</p>
+            </div>
+        </div>
+        </div>
+        <div class="block2"><!-- график с чарт жс -->
+            <section>
+                <h2>Статистика возрастов клиентов</h2>
+                <canvas id="ageChart"></canvas>
+            </section>
+        </div>
+    </div>
+    <footer><!-- подвал -->
+        <ul class="menu3"><!-- меню подвала -->
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="team.html">Команда</a></li>
+            <li><a href="referal.html">Реферал</a></li>
+            <li><a href="table.html">Задолжники</a></li>
+            <li><a href="support.html">Поддержка</a></li>
+            <li><a onclick="changeStyle()">Смена интерфейса</a></li>
+        </ul>
+        <ul class="social"><!-- иконки соцсетей -->
+            <li><a href="telegram.html"><i class="fa-brands fa-telegram"></i></a></li>
+            <li><a href="whatsapp.html"><i class="fa-brands fa-whatsapp"></i></a></li>
+            <li><a href="instagram.html"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <p>©2024 Экзаменационный проект - Kekezaim.kz | Трищ Кирилл ИС-22</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!-- подключение иконок -->
+    <script>
+      function changeStyle() {
+          var currentStyle = document.getElementById('stylesheet').getAttribute('href');
+          if (currentStyle === 'team.css') {
+              document.getElementById('stylesheet').setAttribute('href', 'team_dark.css');
+          } else {
+              document.getElementById('stylesheet').setAttribute('href', 'team.css');
+          }
+      }
+  </script>
+    <script>
+        const ageData = [
+            { age: '18-25 лет', count: 12 },
+            { age: '26-35 лет', count: 36 },
+            { age: '36-45 лет', count: 30 },
+            { age: '46-55 лет', count: 16 },
+            { age: '56+ лет', count: 6 }
+        ];
+
+        function createChart() {
+            const ctx = document.getElementById('ageChart').getContext('2d');
+            const labels = ageData.map(data => data.age);
+            const counts = ageData.map(data => data.count);
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Возраст клиентов банка %',
+                        data: counts,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        createChart();
+
+        // Дополнительный код для слайдера
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-item');
+
+        function showImage(index) {
+            images.forEach((image, idx) => {
+                if (idx === index) {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            showImage(currentImageIndex);
+        }
+
+        // Показываем первое изображение при загрузке страницы
+        showImage(currentImageIndex);
+
+        // Change image every 3 seconds
+        setInterval(nextImage, 3000);
+    </script>
+<script>
+function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active')) {
+            document.addEventListener('click', closeMenuOutside);
+            document.addEventListener('touchstart', closeMenuOutside);
+        } else {
+            document.removeEventListener('click', closeMenuOutside);
+            document.removeEventListener('touchstart', closeMenuOutside);
+        }
+    }
+
+    function toggleSubMenu(element) {
+        element.querySelector('.dropdown-content').classList.toggle('active');
+    }
+
+    function closeMenuOutside(event) {
+        var menu = document.querySelector('.menu');
+        if (!menu.contains(event.target) && !event.target.classList.contains('burger-icon')) {
+            menu.classList.remove('active');
+            document.removeEventListener('click', closeMenuOutside);
+            document.removeEventListener('touchstart', closeMenuOutside);
+        }
+    }
+</script>
+<script src="https://kit.fontawesome.com/09ef455c42.js" crossorigin="anonymous"></script>
+</body>
+</html>
