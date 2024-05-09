@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Занимаем весь экран по вертикали */
+        }
+        h1 {
+            font-size: 92px; /* Увеличим размер текста ошибки */
+            margin: 0;
+            color: #c95959;
+        }
+        a {
+            display: inline-block;
+            font-size: 26px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 4px;
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* Анимация при наведении на кнопку */
+        a:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>404</h1>
+        <h2>Произошла ошибка, не волнуйтесь, все в порядке</h2> 
+        <a href="index.html">Домой</a>
+    </div>
+</body>
+</html>
